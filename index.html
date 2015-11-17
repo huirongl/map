@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TOKYO CITY</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="http://cooper-union-maps-proxy.herokuapp.com/js/draw.js"></script>
+    <script>
+
+      $(document).ready(function(){
+
+        var mapOptions = {
+          zoom: 12,
+          center: new google.maps.LatLng(35.5712144,139.9203203)
+        };
+
+        var positions = [
+          {
+            'title':'Tokyo Disneyland',
+            'map': new google.maps.LatLng(35.6324509,139.8812383),
+            'link':'http://www.tokyodisneyresort.jp/en/tdl/',
+            'html':'<img src=https://exercisingmonsters.files.wordpress.com/2012/02/disney_logo_1_.jpg/>'
+          },
+          {
+            'title':'Yumenoshima Park',
+            'map':new google.maps.LatLng(35.649309,139.8241694),
+            'link':'http://www.yumenoshima.jp/index.html'
+          },
+
+        ];
+
+        draw('map', mapOptions, positions);
+      });
+
+    </script>
+        <style>
+      #map {
+        height:1600px;
+        width:1600px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+</html>
